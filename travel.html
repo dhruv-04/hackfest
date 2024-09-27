@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travling site</title>
+    <style>
+        body{
+            height: 100%;
+            margin: 0;
+            background-image: url(cbd-when-travelling.jpeg);
+            background-size: cover;
+        }
+        header{
+            width: 100%;
+            height: 100vh;    
+        }
+        nav{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo{
+            font-size: 4em;
+            letter-spacing: 2px;
+        }
+        .menu a{
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            position: relative;
+            display: inline-block;
+            
+            
+        
+        }
+        .menu a:before{
+            content: '';
+            position: absolute;
+            top: 0%;
+            bottom: 0%;
+            background-image:linear-gradient(transparent 80%,yellow 100%) ;
+            transition: 0.4s ease;
+            
+        
+        }
+        .menu a:hover:before{
+            width: 100% ;
+        }
+        .register a{
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            background: rgba(255, 255, 0, 0.661);
+            border-radius: 8px;
+            transition: 0.4s;
+        
+        }
+        .register a:hover{
+            background: transparent;
+            border: 1px solid indianred;
+        }
+        .heading-txt{
+            max-width: 680px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%,50%);
+            text-align: center;
+            
+        }
+        .heading-txt span{
+            letter-spacing: 6px;
+            color: white;
+        }
+        .heading-txt h1{
+            font-size: 2.5em;
+            
+        }
+        .heading-txt a{
+            text-decoration: none;
+            background:rgba(255, 255, 0, 0.661) ;
+            
+            padding: 10px 20px;
+            letter-spacing: 5px;
+            transition: 0.4s ;
+        }
+        .heading-txt a:hover{
+            background: transparent;
+            border: 1px solid indianred;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><i>SAIRAG</i></div>
+            <div class="menu">
+
+                <a href="#"><i>Home</i></a>
+                <a href="#"><i>Destinations</i></a>
+                <a href="#"><i>TravelGuides</i></a>
+                <a href="gallery.html"><i>Gallery</i></a>
+                <a href="#"><i>Aboutus</i></a>
+
+            </div>
+
+            <div class="register">
+                <a href="registration.html">register</a>
+
+            </div>
+        </nav>
+        <section class="heading-txt">
+            <span>Enjoy</span>
+            <h1> <i>!!Travel far enough, You meet yourself!!</i></h1>
+
+            <br>
+            <a href="#">Plan your trip</a>
+        </section>
+    </header>
+    
+</body>
+</html>
