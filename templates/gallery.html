@@ -3,57 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .box {
-            width: 30%;
-            height: 30%;
-            border: 2px solid red;
-            box-sizing: border-box;
-            margin: 1%;
-        }
-    </style>
+    <title>Travel Destinations Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-    <div id="container" class="container"></div>
-    <script>
-        let currentRow = 0;
+    <header>
+        <h1>Explore Beautiful Travel Destinations</h1>
+    </header>
+    
+    <main>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/istockphoto-610041376-612x612.jpeg" alt="Beautiful Beach">
+                <div class="overlay">
+                    <h2>Beautiful Beach</h2>
+                    <p>Experience the sun and sand.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Mountain-Sports-cover.jpg.webp" alt="Mountain Adventure">
+                <div class="overlay">
+                    <h2>Mountain Adventure</h2>
+                    <p>Embrace the thrill of hiking.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/serene-forest-stream-stockcake.jpeg" alt="Serene Forest">
+                <div class="overlay">
+                    <h2>Serene Forest</h2>
+                    <p>Reconnect with nature.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/photo-1536286144513-881bfbd3f292.jpeg" alt="Breathtaking Cityscape">
+                <div class="overlay">
+                    <h2>Breathtaking Cityscape</h2>
+                    <p>Explore the urban wonders.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/yvimxzmqqbvl8ymv15xg-e1692081680831.webp" alt="Enchanting sunsets">
+                <div class="overlay">
+                    <h2>Santorini, Greece</h2>
+                    <p>Enchanting sunsets, iconic views</p>
+                </div>
+        </div>
+        
+            <div class="gallery-item">
+                <img src="images/sub004.jpeg" alt="Ethereal blooms">
+                <div class="overlay">
+                    <h2>Cherry Blossoms, Japan</h2>
+                    <p>Pink petals, serene beauty.</p>
+                </div>
+        </div>
+        
+            <div class="gallery-item">
+                <img src="images/Positano-1000x667.jpeg" alt="Colorful villages">
+                <div class="overlay">
+                    <h2>The Amalfi Coast, Italy</h2>
+                    <p>Colorful villages, stunning coastline.</p>
+                </div>
+        </div>
+        
+            <div class="gallery-item">
+                <img src="images/PERU-MACHU-PICCHU--0_1706693630313_1706693667232.webp" alt="Ancient ruins">
+                <div class="overlay">
+                    <h2>Machu Picchu, Peru</h2>
+                    <p> Ancient ruins, breathtaking vistas.</p>
+                </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/Winter-landscape-in-Iceland.jpeg" alt="natural wonders.">
+            <div class="overlay">
+                <h2>Iceland's Golden Circle</h2>
+                <p>nature’s masterpiece.</p>
+            </div>
+    </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Travel Gallery</p>
+    </footer>
 
-        function loadMoreBoxes() {
-            const container = document.getElementById('container');
-            container.innerHTML = ''; // Clear the container
-
-            for (let i = 0; i < 9; i++) {
-                const box = document.createElement('div');
-                box.className = 'box';
-                box.innerText = `Box ${currentRow * 9 + i + 1}`;
-                container.appendChild(box);
-            }
-
-            currentRow++;
-        }
-
-        window.addEventListener('scroll', () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                loadMoreBoxes();
-            }
-        });
-
-        // Initial load
-        loadMoreBoxes();
-    </script>
+    
 </body>
 </html>
