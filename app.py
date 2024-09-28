@@ -25,6 +25,10 @@ def travel():
 def gallery():
     return render_template('gallery.html')
 
+@app.route('/login.html', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
 @app.route('/registration.html', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -57,7 +61,7 @@ def register():
             cursor.close()
             connection.close()
 
-    return "Registration successful!"
+    return render_template('registration.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

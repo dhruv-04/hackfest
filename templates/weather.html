@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .weather-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .weather-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .weather-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .weather-container button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .weather-container button:hover {
+            background: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather Data</h1>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button onclick="getWeatherData()">Get Weather Data</button>
+        <table id="weatherTable">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Temperature (°C)</th>
+                    <th>Humidity (%)</th>
+                    <th>Weather</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Weather data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        async function getWeatherData() {
+            const city = document.getElementById('city').value;
+            const apiKey = '8215d2d885500481b053fa48661fdbb4'; 
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.cod === 200) {
+                    const tableBody = document.getElementById('weatherTable').getElementsByTagName('tbody')[0];
+                    const newRow = tableBody.insertRow();
+
+                    const cityCell = newRow.insertCell(0);
+                    const tempCell = newRow.insertCell(1);
+                    const humidityCell = newRow.insertCell(2);
+                    const weatherCell = newRow.insertCell(3);
+
+                    cityCell.textContent = data.name;
+                    tempCell.textContent = data.main.temp;
+                    humidityCell.textContent = data.main.humidity;
+                    weatherCell.textContent = data.weather[0].description;
+                } else {
+                    alert('City not found');
+                }
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                alert('Error fetching weather data');
+            }
+        }
+    </script>
+</body>
+</html>

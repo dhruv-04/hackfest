@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 500px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px #cd7f32;
+            overflow: hidden;
+        }
+        
+        .profile-header {
+            text-align: center;
+            padding: 20px;
+            background-color: goldenrod;
+            color: white;
+        }
+        
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        
+        .username {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .bio {
+            font-size: 16px;
+            margin: 10px 0 0;
+        }
+        
+        .profile-content {
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            margin: 8px 0;
+        }
+        
+        .profile-footer {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .edit-button {
+            padding: 10px 20px;
+            background-color: goldenrod;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .edit-button:hover {
+            background-color: goldenrod;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="images/download.png" alt="Profile Picture" class="profile-picture">
+            <h1 class="username">Your Name</h1>
+            <p class="bio">This is a short bio about yourself. You can include your interests, hobbies, or anything you'd like!</p>
+        </div>
+        <div class="profile-content">
+            <h2>About Me</h2>
+            <p>This is a short description about myself.</p>
+            <h2>Contact</h2>
+            <ul>
+                <li>Email: your.email@example.com</li>
+                <li>Phone: </li>
+                <li>Location: Your City, Country</li>
+            </ul>
+        </div>
+        <div class="profile-footer">
+            <button class="edit-button">Edit Profile</button>
+        </div>
+    </div>
+</body>
+</html>
